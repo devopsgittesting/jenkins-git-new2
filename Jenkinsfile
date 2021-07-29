@@ -34,7 +34,7 @@ pipeline {
               
                     archiveArtifacts '**/target/*.war'
              }     
-        }
+        
         
          when {
        
