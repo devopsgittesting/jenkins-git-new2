@@ -24,22 +24,15 @@ pipeline {
 
 
         stage ('Deployment Stage') {
+            
+            when {
+       
+               expression { currentBuild.result == 'SUCCESS' }
+            }
             steps {
                     sh 'mvn package -Dv=${BUILD_NUMBER}'
                 }
-            }
-        stage('Success') {
-           when {
-       
-               expression { currentBuild.result == 'SUCCESS' }
-       
-      }
-      steps {
-        echo "hello"
-      }
-    
-            
-         
+                   
         steps {
              
            archiveArtifacts '**/target/*.war'
