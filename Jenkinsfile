@@ -31,22 +31,20 @@ pipeline {
         stage('Success') {
            when {
        
-               expression { build == 'success' }
+               expression { currentBuild.result == 'SUCCESS' }
        
       }
       steps {
-        echo “ok”
+        echo "hello"
       }
-    }
+    
             
-          stage ('Archive Stage') {
-            steps {
+         
+        steps {
              
-                archiveArtifacts '**/target/*.war'
-                }
-            }   
-           
-      
+           archiveArtifacts '**/target/*.war'
+             }     
+        }
     }
        
 }
