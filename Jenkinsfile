@@ -47,12 +47,12 @@ pipeline {
     
     post {
     success {
-   stage ('Archive Stage') {
+   
             steps {
              
                 archiveArtifacts '**/target/*_success.war'
                 }
-            }   
+            
         
     }
     }      
