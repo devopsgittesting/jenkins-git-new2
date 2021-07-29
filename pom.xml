@@ -6,7 +6,7 @@
 	<packaging>war</packaging>
         <version>1.${v}-SNAPSHOT</version>
 	<name>my-app</name>
-	<url>http://maven.apache.org</url>
+	<url>http://maven.apache.org</url
 
 	<dependencies>
 		<dependency>
