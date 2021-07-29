@@ -52,5 +52,5 @@ pipeline {
                 archiveArtifacts '**/target/Success.war
     
     }}
-        
+    }      
 }
