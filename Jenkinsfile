@@ -35,6 +35,18 @@ pipeline {
                     archiveArtifacts '**/target/*.war'
              }     
         }
+        
+         when {
+       
+               expression { currentBuild.result == 'FAILURE' }
+            }
+            steps {
+                    sh 'mvn package install -Dv=${BUILD_NUMBER}'
+              
+                    archiveArtifacts '**/target/*_failed.war'
+             }     
+        }
+        
     }
        
 }
