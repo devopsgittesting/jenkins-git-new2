@@ -37,8 +37,12 @@ pipeline {
        
               
         }
+        
+        
+         stage ('Archive Stage') {
+            steps {
                  archiveArtifacts '**/target/*_failed.war'
-              
+            }}
         
         
     }
