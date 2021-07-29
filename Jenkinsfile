@@ -27,7 +27,7 @@ pipeline {
             
             when {
        
-               expression { currentBuild.result == 'SUCCESS' }
+               expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
             }
             steps {
                     sh 'mvn package -Dv=${BUILD_NUMBER}'
