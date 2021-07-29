@@ -28,7 +28,16 @@ pipeline {
                     sh 'mvn package -Dv=${BUILD_NUMBER}'
                 }
             }
-        
+        stage('Success') {
+      when {
+       
+          build == 'success'
+       
+      }
+      steps {
+        echo “ok”
+      }
+    }
             
           stage ('Archive Stage') {
             steps {
