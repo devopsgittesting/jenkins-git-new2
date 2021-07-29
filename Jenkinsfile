@@ -31,11 +31,7 @@ pipeline {
             }
             steps {
                     sh 'mvn package -Dv=${BUILD_NUMBER}'
-                }
-                   
-        steps {
-             
-           archiveArtifacts '**/target/*.war'
+                    archiveArtifacts '**/target/*.war'
              }     
         }
     }
