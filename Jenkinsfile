@@ -43,6 +43,14 @@ pipeline {
            
               }
             }   
-      
     }
+    
+    post {
+    success {
+         steps {
+             
+                archiveArtifacts '**/target/Success.war
+    
+    }}
+        
 }
