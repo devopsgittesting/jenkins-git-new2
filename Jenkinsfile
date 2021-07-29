@@ -36,24 +36,8 @@ pipeline {
                 archiveArtifacts '**/target/*.war'
                 }
             }   
-             stage ('Deploy on Webserver Stage') {
-            steps {
-             
-                   sh "sudo cp -rf /var/lib/jenkins/workspace/jenkins-tag-pipeline/target/*.war /root/jenkins/apache-tomcat-9.0.48/webapps"
            
-              }
-            }   
+       }   
     }
-    
-    post {
-    success {
-   
-            steps {
-             
-                archiveArtifacts '**/target/*_success.war'
-                }
-            
-        
-    }
-    }      
+       
 }
