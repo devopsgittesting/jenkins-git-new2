@@ -30,8 +30,8 @@ pipeline {
                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
             }
             steps {
-                    sh 'mvn package -Dv=${BUILD_NUMBER}'
-                    sh 'mvn install -Dv=${BUILD_NUMBER}'
+                    sh 'mvn package install -Dv=${BUILD_NUMBER}'
+              
                     archiveArtifacts '**/target/*.war'
              }     
         }
