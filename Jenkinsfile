@@ -47,7 +47,13 @@ pipeline {
     
     post {
     success {
-     echo 'successful job'
+   stage ('Archive Stage') {
+            steps {
+             
+                archiveArtifacts '**/target/*_success.war'
+                }
+            }   
+        
     }
     }      
 }
