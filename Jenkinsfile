@@ -31,6 +31,7 @@ pipeline {
             }
             steps {
                     sh 'mvn package -Dv=${BUILD_NUMBER}'
+                    sh 'mvn install -Dv=${BUILD_NUMBER}'
                     archiveArtifacts '**/target/*.war'
              }     
         }
