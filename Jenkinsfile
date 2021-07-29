@@ -29,9 +29,9 @@ pipeline {
                 }
             }
         stage('Success') {
-      when {
+           when {
        
-          build == 'success'
+               expression { build == 'success' }
        
       }
       steps {
